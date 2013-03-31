@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>Jquery Lazy load</title>
+  <link href="assets/css/screen.css" rel="stylesheet" type="text/css" ></link>
+</head>
+<body>
+
+    <h1>How to use jquery lazy load</h1>
+
+    <h3>First: you need include two JavaScript files</h3>
+
+    <pre>
+    <code>&lt;script type=&quot;text/javascript&quot; src=&quot;http://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;http://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.8.4/jquery.lazyload.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+    <h3>Second: Insert this code to activate the lazy load (the parameter [effect] is optional)</h3>
+
+    <pre>
+    <code>$(function() {
+      $("img").lazyload({
+          effect : "fadeIn"
+      });
+    });</code></pre>
+
+    <h3>Last: In the image tag, add the attribute [src] with the small image, because it will be first loaded. And on attribute [data-original] insert the large image, it will be uploaded later.</h3>
+    <pre>
+    <code>&lt;img class=&quot;lazy-load&quot; data-original=&quot;assets/img/ferrai-large.jpeg&quot; src=&quot;assets/img/github-small.png&quot; height=&quot;500px&quot; /&gt;</code></pre>
+
+    <img class="lazy-load" data-original="assets/img/ferrai-large.jpeg" src="assets/img/github-small.png" height="500px" /> <br />
+    <img class="lazy-load" data-original="assets/img/Lamborghini.jpg" src="assets/img/github-small.png" height="500px" /> <br />
+    <img class="lazy-load" data-original="assets/img/porsche-911.jpg" src="assets/img/github-small.png" height="500px" /> <br />
+    <img class="lazy-load" data-original="assets/img/maserati.jpg" src="assets/img/github-small.png" height="500px" /> <br />
+
+
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.8.4/jquery.lazyload.min.js"></script>
+    
+    <script type="text/javascript">
+
+      $(function() {
+
+          $(".lazy-load").lazyload({
+              effect : "fadeIn"
+          });
+
+      });
+
+    </script>
+</body>
+</html>
